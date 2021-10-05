@@ -5,6 +5,8 @@ const forecast = require("./utils/forecast");
 
 app = express();
 
+const port = process.env.PORT || 3000;
+
 staticDirectoryPath = path.join(__dirname, "../public");
 
 app.use(express.static(staticDirectoryPath));
@@ -46,6 +48,6 @@ app.get("/weather", (req, res) => {
   //   });
 });
 
-app.listen(3000, () => {
-  console.log("web server is up");
+app.listen(port, () => {
+  console.log("web server is up on port" + port);
 });
